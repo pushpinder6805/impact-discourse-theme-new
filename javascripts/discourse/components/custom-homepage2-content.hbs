@@ -179,11 +179,10 @@
     </style>
 
     <div class="welcome-container">
-        <h1>Welcome to RISE Impact Investing Community</h1>
-        <p><i>BETA Version 1.0</i></p>
-        <p>We are more than a network—we’re your partner in driving measurable impact through private investments.</p>
-        <p>Here, you’ll gain exclusive access to curated deal flow across key sectors like clean energy, real estate, and sustainable farming. Our community is built for serious investors ready to align their portfolios with their purpose and make a tangible difference.</p>
-        <p>Whether you’re exploring new opportunities or looking to expand your impact, we provide the resources, connections, and insights you need to act with confidence.</p>
+        <h1>Welcome to RISE Impact Investing Community!</h1>
+        <p>We are network of women who are ready to make an impact through investing.</p>
+        <p>Here, you’ll find a supportive community and the resources you need to align your investments with your values.<br>
+Whether you’re just starting or looking to expand your impact, we’re here to guide you every step of the way.</p>
     </div>
     
     <div class="premium-container">
@@ -202,119 +201,6 @@
         </a>
     </div>
     </div>
-
-    <div class="impact-cards-container">
-        <a href="https://impactinvestingcommunity.com/c/free-educational-videos" target="_blank">
-      <div class="impact-card">
-        <img src="https://impactinvestingcommunity.com/uploads/default/original/1X/3bb1c72463c52fbaad0d4c13b0e3dcc48397a49d.png" alt="Learn Impact Investing for Free" class="card-image">
-        <div class="card-overlay">
-          <p>LEARN IMPACT INVESTING FOR FREE</p>
-        </div>
-      </div>
-      </a>
-      <a href="https://impactinvestingcommunity.com/c/private-opportunities/23" target="_blank">
-      <div class="impact-card">
-        <img src="https://impactinvestingcommunity.com/uploads/default/original/1X/d398c07e8efdf9de08fe8c3a293c6ec9204fefb7.png" alt="Discover List of Impact Investment Opportunities" class="card-image">
-        <div class="card-overlay">
-          <p>DISCOVER LIST OF IMPACT INVESTMENT OPPORTUNITIES</p>
-        </div>
-      </div>
-      </a>
-    </div>
-
-    <!-- Upcoming Events Section Added Here -->
-    <div class="upcoming-events-container">
-        <div class="highlight-bar"></div> <!-- The bar comes first -->
-      <span class="upcoming-events-label">Upcoming Events</span>
-    </div>
-<!-- First event -->
-<a href="https://impactinvestingcommunity.com/t/impact-circle/179" target="_blank">
-    <div class="event-container">
-      <div class="event-left">
-        <h2>OCT 24</h2>
-        <p>12:00 PM PST</p>
-        <p>LinkedIn Live</p>
-        <p id="going-event-1">10 going</p> <!-- Unique ID for first event -->
-      </div>
-      <div class="event-right">
-        <img src="https://impactinvestingcommunity.com/uploads/default/original/1X/344454ba592c2ea70655c7888bc5134806f17d2e.png" alt="Event Banner" style="width: 100%; height: auto;">
-      </div>
-    </div>
-</a>
-
-<!-- Second event -->
-<a href="https://impactinvestingcommunity.com/t/impact-circle/179" target="_blank">
-    <div class="event-container">
-      <div class="event-left">
-        <h2>NOV 7</h2>
-        <p>12:00 PM PST</p>
-        <p>LinkedIn Live</p>
-        <p id="going-event-2">10 going</p> <!-- Unique ID for second event -->
-      </div>
-      <div class="event-right">
-        <img src="https://impactinvestingcommunity.com/uploads/default/original/1X/981c0c8fcd9ee50ccbac065985e54c2207409eee.JPG" alt="Event Banner" style="width: 100%; height: auto;">
-      </div>
-    </div>
-</a>
-
-<!-- Third event -->
-<a href="https://impactinvestingcommunity.com/t/investing-in-renewable-energy-why-it-matters-and-the-future-of-renewable-energy-investments/240" target="_blank">
-    <div class="event-container">
-      <div class="event-left">
-        <h2>DEC 5</h2>
-        <p>12:00 PM PST</p>
-        <p>LinedIn Live</p>
-        <p id="going-event-3">25 going</p> <!-- Unique ID for third event -->
-      </div>
-      <div class="event-right">
-        <img src="https://impactinvestingcommunity.com/uploads/default/original/1X/d290b8000bd746efbf8f21090b2d2e43a73efdff.png" alt="Event Banner" style="width: 100%; height: auto;">
-      </div>
-    </div>
-</a>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  function updateGoingCount(apiUrl, elementId) {
-    fetch(apiUrl, {
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-
-      const post = data.post_stream.posts[0];
-      
-      if (post && post.event && post.event.stats) {
-
-        const goingCount = post.event.stats.going;
-
-
-        document.getElementById(elementId).textContent = `${goingCount} going`;
-      } else {
-        console.error(`Could not find the "going" count in API response for ${elementId}`);
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching API data:', error);
-    });
-  }
-
-
-  const events = [
-    { apiUrl: "https://impactinvestingcommunity.com/t/leveraging-familey-offices-building-relationships-and-driving-impact/288.json", elementId: "going-event-1" },
-    { apiUrl: "https://impactinvestingcommunity.com/t/creating-passive-income-with-purpose-how-to-achieve-financial-freedom-while-making-a-positive-impact/179.json", elementId: "going-event-2" },
-    { apiUrl: "https://impactinvestingcommunity.com/t/investing-in-renewable-energy-why-it-matters-and-the-future-of-renewable-energy-investments/240.json", elementId: "going-event-3" }
-  ];
-
-
-  events.forEach(event => {
-    updateGoingCount(event.apiUrl, event.elementId);
-  });
-});
-</script>
-
-
-    <!-- 4th event-->
+    
   </section>
 {{/if}}
