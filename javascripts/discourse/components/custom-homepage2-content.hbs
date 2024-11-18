@@ -88,71 +88,67 @@
       background-color: #a08f5d;
     }
 
-    /* Video Section */
-    .video-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
+    /* Container */
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
-    /* Main Video */
-    .main-video video {
-      width: 100%;
-      max-width: 800px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-    }
+/* Main Video */
+.main-video video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
 
-    /* Thumbnails */
-    .video-thumbnails {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      width: 100%;
-    }
+/* Thumbnails */
+.video-thumbnails {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
 
-    .thumbnail video {
-      width: 100%;
-      max-width: 150px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      transition: border-color 0.3s;
-    }
+.thumbnail {
+  width: calc(33.33% - 20px); /* Ensures 3 thumbnails fit in one row with spacing */
+  max-width: 200px;
+  flex: 1;
+}
 
-    .thumbnail video:hover {
-      border-color: #b09d5e;
-    }
+.thumbnail video {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .premium-container {
-        flex-direction: column;
-        padding: 20px;
-      }
+.thumbnail video:hover {
+  border-color: #b09d5e;
+}
 
-      .main-video video {
-        max-width: 100%;
-      }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .thumbnail {
+    width: calc(50% - 15px); /* Adjust to fit 2 thumbnails per row on tablets */
+  }
+}
 
-      .thumbnail video {
-        max-width: 120px;
-      }
-    }
+@media (max-width: 480px) {
+  .thumbnail {
+    width: 100%; /* Full width thumbnails on smaller screens */
+  }
+}
 
-    @media (max-width: 480px) {
-      .main-video video {
-        max-width: 100%;
-      }
-
-      .thumbnail video {
-        max-width: 100px;
-      }
-    }
   </style>
 
   <!-- Welcome Section -->
@@ -182,37 +178,37 @@
     </div>
   </div>
 
-  <!-- Video Section -->
   <div class="video-container">
-    <!-- Main Video -->
-    <div class="main-video">
+  <!-- Main Video -->
+  <div class="main-video">
+    <video controls>
+      <source src="placeholder.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Smaller Video Thumbnails -->
+  <div class="video-thumbnails">
+    <div class="thumbnail">
       <video controls>
         <source src="placeholder.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-
-    <!-- Smaller Video Thumbnails -->
-    <div class="video-thumbnails">
-      <div class="thumbnail">
-        <video controls>
-          <source src="placeholder.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div class="thumbnail">
-        <video controls>
-          <source src="placeholder.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div class="thumbnail">
-        <video controls>
-          <source src="placeholder.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+    <div class="thumbnail">
+      <video controls>
+        <source src="placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="thumbnail">
+      <video controls>
+        <source src="placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
+</div>
+
 </section>
 {{/if}}
