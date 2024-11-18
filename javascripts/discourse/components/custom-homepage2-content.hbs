@@ -1,296 +1,218 @@
 {{#if this.isHomepage}}
-  <section class="resources snipcss-aQjeH">
-    <style>
-      .d-header{
-        background-color: #B3BA9D !important;
-      }
-      .premium-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #ffffff !important;
-        border: 2px solid #c4a769;
-        border-radius: 50px;
-        padding: 5px 121px;
-        max-width: 745px;
-        margin: 20px auto;
-      }
+<section class="resources snipcss-aQjeH">
+  <style>
+    /* General Styles */
+    .d-header {
+      background-color: #B3BA9D !important;
+    }
 
-      .premium-text {
-        color: #675f50;
-      }
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-      .premium-text h2 {
-        font-size: 1.5rem;
-        margin: 0 0 10px;
-        color: #8b7642;
-      }
+    /* Welcome Section */
+    .welcome-container {
+      background-color: #4E5935;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 1012px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-      .premium-text ul {
-        margin: 0;
-        padding: 0 0 0 20px;
-        list-style-type: disc;
-        color: #675f50;
-      }
-
-      .premium-text ul li {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      .premium-button {
-        background-color: #b4a16f;
-        color: white;
-        padding: 15px 40px;
-        border: none;
-        border-radius: 50px;
-        font-size: 1rem;
-        cursor: pointer;
-        text-align: center;
-      }
-
-      .premium-button:hover {
-        background-color: #a08f5d;
-      }
-
-      body {
-          font-family: Arial, sans-serif;
-      }
-      .welcome-container {
-          background-color: #4E5935;
-          color: #fff;
-          text-align: center;
-          padding: 20px;
-          border-radius: 10px;
-          max-width: 1012px;
-          margin: 20px auto;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-     .welcome-container h1 {
-      font-family: Playfair Display;
+    .welcome-container h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 2rem;
       margin: 0;
-     }
-      .welcome-container p {
-      font-family: 'Montserrat';
+    }
+
+    .welcome-container p {
+      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
       margin: 10px 0;
-      }
-      .impact-cards-container {
+    }
+
+    /* Premium Section */
+    .premium-container {
       display: flex;
-      margin: 2px 0;
-      gap: 21px;
-      }
-
-      .impact-card {
-      position: relative;
-      height: 23em;
-      width: 100%;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .card-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      }
-
-      .card-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(181, 161, 111, 0.8); /* Semi-transparent gold overlay */
-      display: flex;
+      flex-direction: column; /* Changed for better responsiveness */
       justify-content: center;
       align-items: center;
-      text-align: center;
-      }
-
-      .card-overlay p {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 0;
+      background-color: #ffffff !important;
+      border: 2px solid #c4a769;
+      border-radius: 50px;
       padding: 20px;
-      }
-
-      .impact-card:hover .card-overlay {
-      background-color: rgba(181, 161, 111, 0.9); /* Slightly darker on hover */
-      }
-
-      .event-container {
-      display: flex;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 1090px;
+      max-width: 745px;
       margin: 20px auto;
-      }
+    }
 
-      .event-left {
-      background-color: #f8f8f8;
+    .premium-text {
+      color: #675f50;
       text-align: center;
-      padding: 20px;
-      min-width: 180px;
-      }
+      margin-bottom: 15px;
+    }
 
-      .event-left h2 {
-      color: #D32F2F;
+    .premium-text h2 {
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+      color: #8b7642;
+    }
+
+    .premium-text ul {
       margin: 0;
-      font-size: 36px;
-      font-weight: bold;
+      padding: 0;
+      list-style-type: disc;
+      text-align: left;
+    }
+
+    .premium-text ul li {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .premium-button {
+      background-color: #b4a16f;
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .premium-button:hover {
+      background-color: #a08f5d;
+    }
+
+    /* Video Section */
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Main Video */
+    .main-video video {
+      width: 100%;
+      max-width: 800px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+
+    /* Thumbnails */
+    .video-thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .thumbnail video {
+      width: 100%;
+      max-width: 150px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      transition: border-color 0.3s;
+    }
+
+    .thumbnail video:hover {
+      border-color: #b09d5e;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .premium-container {
+        flex-direction: column;
+        padding: 20px;
       }
 
-      .event-left p {
-      color: #666;
-      margin: 5px 0;
+      .main-video video {
+        max-width: 100%;
       }
 
-      /* Upcoming Events Section */
-     .upcoming-events-container {
-    display: flex;
-    flex-direction: column; /* This ensures the highlight bar is above the text */
-    align-items: flex-start;
-    margin: 30px auto;
-    max-width: 1090px;
-}
+      .thumbnail video {
+        max-width: 120px;
+      }
+    }
 
-      .upcoming-events-label {
-    font-family: 'Arial', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #3f4921;
-}
-
-     .highlight-bar {
-    width: 167px;
-    height: 6px;
-    background-color: #b4a16f;
-    margin-bottom: 10px; /* Adds spacing between the bar and the text */
-}
-
-      .gold {
-        border-top: 2px solid #DCB854;
+    @media (max-width: 480px) {
+      .main-video video {
+        max-width: 100%;
       }
 
-      /* phase2 */
-      /* Container */
-.video-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 10px;
-}
+      .thumbnail video {
+        max-width: 100px;
+      }
+    }
+  </style>
 
-/* Main Video */
-.main-video video {
-  width: 100%;
-  max-width: 800px; /* Limits the maximum size on large screens */
-  border: 2px solid #ccc;
-  border-radius: 10px;
-}
+  <!-- Welcome Section -->
+  <div class="welcome-container">
+    <h1>Welcome to RISE Impact Investing Community!</h1>
+    <p>We are a network of women who are ready to make an impact through investing.</p>
+    <p>Here, you’ll find a supportive community and the resources you need to align your investments with your values.<br>
+      Whether you’re just starting or looking to expand your impact, we’re here to guide you every step of the way.
+    </p>
+  </div>
 
-/* Thumbnails */
-.video-thumbnails {
-  display: flex;
-  flex-wrap: wrap; /* Allows thumbnails to wrap on smaller screens */
-  justify-content: center;
-  gap: 15px;
-}
-
-.thumbnail video {
-  width: 100%;
-  max-width: 150px; /* Thumbnails are smaller but adapt */
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  transition: border-color 0.3s; /* Smooth hover effect */
-}
-
-.thumbnail video:hover {
-  border-color: #b09d5e; /* Hover effect for thumbnails */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) { /* Tablets and smaller */
-  .main-video video {
-    max-width: 100%; /* Main video takes full width */
-  }
-  .thumbnail video {
-    max-width: 120px; /* Smaller thumbnails on tablets */
-  }
-}
-
-@media (max-width: 480px) { /* Mobile phones */
-  .main-video video {
-    max-width: 100%; /* Main video takes full width */
-  }
-  .thumbnail video {
-    max-width: 100px; /* Smaller thumbnails on phones */
-  }
-}
-
-    </style>
-
-    <div class="welcome-container">
-        <h1>Welcome to RISE Impact Investing Community!</h1>
-        <p>We are network of women who are ready to make an impact through investing.</p>
-        <p>Here, you’ll find a supportive community and the resources you need to align your investments with your values.<br>
-Whether you’re just starting or looking to expand your impact, we’re here to guide you every step of the way.</p>
-    </div>
-    
-    <div class="premium-container">
+  <!-- Premium Section -->
+  <div class="premium-container">
     <div class="premium-text">
-        <h2>Unlock Premium and Exclusive Benefits</h2>
-        <ul>
-            <li>Exclusive Access to the Impact Investing Masterclass</li>
-            <li>Exclusive and Tailored High-Impact Deals</li>
-            <li>Exclusive Masterclasses, Articles, and News</li>
-            <li>Exclusive Events and In-Person Investors' Dinners and more!</li>
-        </ul>
+      <h2>Unlock Premium and Exclusive Benefits</h2>
+      <ul>
+        <li>Exclusive Access to the Impact Investing Masterclass</li>
+        <li>Exclusive and Tailored High-Impact Deals</li>
+        <li>Exclusive Masterclasses, Articles, and News</li>
+        <li>Exclusive Events and In-Person Investors' Dinners and more!</li>
+      </ul>
     </div>
     <div>
       <a href="https://impactinvestingcommunity.com/s" target="_blank">
         <button class="premium-button">Upgrade to Premium</button>
-        </a>
-    </div>
-    </div>
-    <div class="video-container">
-  <!-- Main Video -->
-  <div class="main-video">
-    <video controls>
-      <source src="placeholder.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Smaller Video Thumbnails -->
-  <div class="video-thumbnails">
-    <div class="thumbnail">
-      <video controls>
-        <source src="placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="thumbnail">
-      <video controls>
-        <source src="placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="thumbnail">
-      <video controls>
-        <source src="placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      </a>
     </div>
   </div>
-</div>
 
+  <!-- Video Section -->
+  <div class="video-container">
+    <!-- Main Video -->
+    <div class="main-video">
+      <video controls>
+        <source src="placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-  </section>
+    <!-- Smaller Video Thumbnails -->
+    <div class="video-thumbnails">
+      <div class="thumbnail">
+        <video controls>
+          <source src="placeholder.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="thumbnail">
+        <video controls>
+          <source src="placeholder.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="thumbnail">
+        <video controls>
+          <source src="placeholder.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
 {{/if}}
