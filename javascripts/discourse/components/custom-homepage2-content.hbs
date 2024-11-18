@@ -394,7 +394,20 @@
 </div>
 
 
+<script>
+  const scrollCards = document.querySelector('.scroll-cards');
+const scrollLeftBtn = document.querySelector('.scroll-left');
+const scrollRightBtn = document.querySelector('.scroll-right');
 
+scrollLeftBtn.addEventListener('click', () => {
+  scrollCards.scrollBy({ left: -300, behavior: 'smooth' }); // Scroll left by 300px
+});
+
+scrollRightBtn.addEventListener('click', () => {
+  scrollCards.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll right by 300px
+});
+
+</script>
 
 
 </section>
