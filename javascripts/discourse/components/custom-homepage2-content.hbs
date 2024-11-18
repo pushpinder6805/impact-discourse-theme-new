@@ -117,6 +117,44 @@
   }
 }
 
+/* Video Gallery */
+.video-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensures the videos wrap on smaller screens */
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Individual Video Item */
+.video-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px; /* Adjust width as necessary */
+  text-align: center;
+}
+
+.video-item video {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+.video-item video:hover {
+  border-color: #b09d5e; /* Hover effect */
+}
+
+.video-title {
+  font-size: 14px;
+  color: #333;
+  margin-top: 8px;
+  text-align: center;
+  line-height: 1.2;
+}
+
 
   </style>
 
@@ -157,6 +195,29 @@
       allowfullscreen
       class="responsive-video">
     </iframe>
+  </div>
+</div>
+<div class="video-gallery">
+  <div class="video-item">
+    <video controls>
+      <source src="https://drive.google.com/uc?id=1XA2dCsiXwoEv5EoJGf_7OOJESIrVoXa4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="video-title">Planting Seeds Of Change</p>
+  </div>
+  <div class="video-item">
+    <video controls>
+      <source src="https://drive.google.com/uc?id=1XA2dCsiXwoEv5EoJGf_7OOJESIrVoXa4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="video-title">A Guide to Impact Investing</p>
+  </div>
+  <div class="video-item">
+    <video controls>
+      <source src="https://drive.google.com/uc?id=1XA2dCsiXwoEv5EoJGf_7OOJESIrVoXa4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="video-title">The Future of Impact</p>
   </div>
 </div>
 
