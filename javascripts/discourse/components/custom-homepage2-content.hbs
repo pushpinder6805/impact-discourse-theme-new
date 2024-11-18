@@ -176,6 +176,64 @@
       .gold {
         border-top: 2px solid #DCB854;
       }
+
+      /* phase2 */
+      /* Container */
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Main Video */
+.main-video video {
+  width: 100%;
+  max-width: 800px; /* Limits the maximum size on large screens */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Thumbnails */
+.video-thumbnails {
+  display: flex;
+  flex-wrap: wrap; /* Allows thumbnails to wrap on smaller screens */
+  justify-content: center;
+  gap: 15px;
+}
+
+.thumbnail video {
+  width: 100%;
+  max-width: 150px; /* Thumbnails are smaller but adapt */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s; /* Smooth hover effect */
+}
+
+.thumbnail video:hover {
+  border-color: #b09d5e; /* Hover effect for thumbnails */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablets and smaller */
+  .main-video video {
+    max-width: 100%; /* Main video takes full width */
+  }
+  .thumbnail video {
+    max-width: 120px; /* Smaller thumbnails on tablets */
+  }
+}
+
+@media (max-width: 480px) { /* Mobile phones */
+  .main-video video {
+    max-width: 100%; /* Main video takes full width */
+  }
+  .thumbnail video {
+    max-width: 100px; /* Smaller thumbnails on phones */
+  }
+}
+
     </style>
 
     <div class="welcome-container">
@@ -201,6 +259,38 @@ Whether you’re just starting or looking to expand your impact, we’re here to
         </a>
     </div>
     </div>
-    
+    <div class="video-container">
+  <!-- Main Video -->
+  <div class="main-video">
+    <video controls>
+      <source src="placeholder.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Smaller Video Thumbnails -->
+  <div class="video-thumbnails">
+    <div class="thumbnail">
+      <video controls>
+        <source src="placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="thumbnail">
+      <video controls>
+        <source src="placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="thumbnail">
+      <video controls>
+        <source src="placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+
   </section>
 {{/if}}
