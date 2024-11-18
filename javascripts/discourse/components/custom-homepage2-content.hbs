@@ -87,67 +87,38 @@
     .premium-button:hover {
       background-color: #a08f5d;
     }
-
-    /* Container */
+/* Container */
 .video-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 /* Main Video */
-.main-video video {
+.main-video iframe {
   width: 100%;
-  max-width: 800px;
-  height: auto;
+  height: 450px; /* Adjust height as necessary */
   border: 2px solid #ccc;
   border-radius: 10px;
-}
-
-/* Thumbnails */
-.video-thumbnails {
-  display: flex;
-  flex-wrap: wrap; /* Allows wrapping for smaller screens */
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-}
-
-.thumbnail {
-  width: calc(33.33% - 20px); /* Ensures 3 thumbnails fit in one row with spacing */
-  max-width: 200px;
-  flex: 1;
-}
-
-.thumbnail video {
-  width: 100%;
-  height: auto;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  transition: border-color 0.3s;
-}
-
-.thumbnail video:hover {
-  border-color: #b09d5e;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .thumbnail {
-    width: calc(50% - 15px); /* Adjust to fit 2 thumbnails per row on tablets */
+  .main-video iframe {
+    height: 300px; /* Reduce height for tablets */
   }
 }
 
 @media (max-width: 480px) {
-  .thumbnail {
-    width: 100%; /* Full width thumbnails on smaller screens */
+  .main-video iframe {
+    height: 200px; /* Reduce height for mobile */
   }
 }
+
 
   </style>
 
@@ -178,37 +149,19 @@
     </div>
   </div>
 
-  <div class="video-container">
+<div class="video-container">
   <!-- Main Video -->
   <div class="main-video">
-    <video controls>
-      <source src="placeholder.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Smaller Video Thumbnails -->
-  <div class="video-thumbnails">
-    <div class="thumbnail">
-      <video controls>
-        <source src="placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="thumbnail">
-      <video controls>
-        <source src="placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="thumbnail">
-      <video controls>
-        <source src="placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <iframe
+      src="https://drive.google.com/file/d/1XA2dCsiXwoEv5EoJGf_7OOJESIrVoXa4/preview"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      class="responsive-video">
+    </iframe>
   </div>
 </div>
+
 
 </section>
 {{/if}}
