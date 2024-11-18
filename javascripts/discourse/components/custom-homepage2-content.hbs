@@ -155,6 +155,7 @@
   line-height: 1.2;
 }
 
+/* test */
 .scrollable-card-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -251,6 +252,7 @@
 .scroll-btn:hover {
   background-color: #a08f5d;
 }
+
 
 
 
@@ -365,37 +367,84 @@
   <h1>Discover List of Investment Opportunities</h1>
   <div class="scroll-wrapper">
     <button class="scroll-btn scroll-left">&lt;</button>
-    <div class="scroll-cards">
-      <!-- Link cards from the other page -->
-      <a href="https://impactinvestingcommunity.com/t/energea-renewable-energy/157" class="card">
-        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/11112796108db01e791fb6d17caf83623e99ffa9_2_867x750.jpeg" alt="Energea">
-        <h2>Energea - Renewable Energy</h2>
-        <p>Promoting sustainability and combating climate change</p>
-      </a>
-      <a href="https://impactinvestingcommunity.com/t/epic-cleantec/140" class="card">
-        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/4220f2dd11b9c0a54a1eca836f9bae00c9962129_2_867x750.jpeg" alt="Epic Cleantec">
-        <h2>Epic Cleantec</h2>
-        <p>Impact Investment: Water Reuse Technology / Onsite Water Reuse</p>
-      </a>
-      <a href="https://impactinvestingcommunity.com/t/7wireventures-healthcare-vc/168" class="card">
-        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/112ec201589db9fc1e9a723b50de2ac9cd74e937_2_867x750.jpeg" alt="7Wire Ventures">
-        <h2>7Wire Ventures - Healthcare VC</h2>
-        <p>Investing in businesses that make a difference in health and well-being</p>
-      </a>
-      <a href="https://impactinvestingcommunity.com/t/blocpower-clean-energy/158" class="card">
-        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/7d3201b6da0969907a20eca69f904583ae2bdf80_2_1035x648.jpeg" alt="BlocPower">
-        <h2>BlocPower - Clean Energy</h2>
-        <p>Affordable and clean energy solutions for urban areas</p>
-      </a>
-      <!-- Add more cards as needed -->
-    </div>
+    <div class="scroll-cards" id="scroll-cards"></div>
     <button class="scroll-btn scroll-right">&gt;</button>
   </div>
 </div>
-
-
 <script>
-  const scrollCards = document.querySelector('.scroll-cards');
+// Card data from your provided data
+const cardData = [
+  {
+    title: 'Energea - Renewable Energy',
+    description: 'Promoting sustainability and combating climate change',
+    imageUrl: 'https://impactinvestingcommunity.com/uploads/default/optimized/1X/11112796108db01e791fb6d17caf83623e99ffa9_2_867x750.jpeg',
+    link: 'https://impactinvestingcommunity.com/t/energea-renewable-energy/157',
+    views: 7,
+    comments: 0
+  },
+  {
+    title: 'Epic Cleantec',
+    description: 'Impact Investment: Water Reuse Technology / Onsite Water Reuse',
+    imageUrl: 'https://impactinvestingcommunity.com/uploads/default/optimized/1X/4220f2dd11b9c0a54a1eca836f9bae00c9962129_2_867x750.jpeg',
+    link: 'https://impactinvestingcommunity.com/t/epic-cleantec/140',
+    views: 16,
+    comments: 0
+  },
+  {
+    title: '7Wire Ventures - Healthcare VC',
+    description: 'Investing in businesses that make a difference in health and well-being',
+    imageUrl: 'https://impactinvestingcommunity.com/uploads/default/optimized/1X/112ec201589db9fc1e9a723b50de2ac9cd74e937_2_867x750.jpeg',
+    link: 'https://impactinvestingcommunity.com/t/7wireventures-healthcare-vc/168',
+    views: 5,
+    comments: 0
+  },
+  {
+    title: 'BlocPower - Clean Energy',
+    description: 'Affordable and clean energy solutions for urban areas',
+    imageUrl: 'https://impactinvestingcommunity.com/uploads/default/optimized/1X/7d3201b6da0969907a20eca69f904583ae2bdf80_2_1035x648.jpeg',
+    link: 'https://impactinvestingcommunity.com/t/blocpower-clean-energy/158',
+    views: 10,
+    comments: 1
+  },
+  {
+    title: 'Sunwealth - Big Path Capital',
+    description: 'Investing in clean energy projects',
+    imageUrl: 'https://impactinvestingcommunity.com/uploads/default/original/1X/b19c1dbe55508bd90f863f4078dc1200527d81c2.jpeg',
+    link: 'https://impactinvestingcommunity.com/t/sunwealth-big-path-capital/156',
+    views: 13,
+    comments: 31
+  },
+  {
+    title: 'Redwood Materials - Recycling',
+    description: 'Recycling and processing lithium-ion batteries',
+    imageUrl: 'https://impactinvestingcommunity.com/uploads/default/original/1X/180ea3f944d23d4e11c0a192692f9d17977c734a.jpeg',
+    link: 'https://impactinvestingcommunity.com/t/redwood-materials-recycling/152',
+    views: 12,
+    comments: 3
+  }
+  // Add more cards as needed
+];
+
+// Dynamically render the cards
+const scrollCards = document.getElementById('scroll-cards');
+cardData.forEach(card => {
+  const cardElement = document.createElement('a');
+  cardElement.href = card.link;
+  cardElement.target = '_blank';
+  cardElement.classList.add('card');
+  cardElement.innerHTML = `
+    <img src="${card.imageUrl}" alt="${card.title}">
+    <h2>${card.title}</h2>
+    <p>${card.description}</p>
+    <div class="card-footer">
+      <span>👁️ ${card.views}</span>
+      <span>💬 ${card.comments}</span>
+    </div>
+  `;
+  scrollCards.appendChild(cardElement);
+});
+
+// Scroll functionality
 const scrollLeftBtn = document.querySelector('.scroll-left');
 const scrollRightBtn = document.querySelector('.scroll-right');
 
@@ -407,7 +456,9 @@ scrollRightBtn.addEventListener('click', () => {
   scrollCards.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll right by 300px
 });
 
+
 </script>
+
 
 
 </section>
