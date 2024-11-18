@@ -155,6 +155,104 @@
   line-height: 1.2;
 }
 
+.scrollable-card-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.scrollable-card-container h1 {
+  font-size: 2rem;
+  color: #3b3b3b;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.scroll-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Ensures cards stay inside the container */
+}
+
+.scroll-cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+  padding: 10px 0;
+}
+
+.scroll-cards::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner UI */
+}
+
+.card {
+  flex: 0 0 250px; /* Fixed width for each card */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin: 10px;
+  color: #555;
+}
+
+.scroll-btn {
+  background-color: #b09d5e;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.scroll-left {
+  left: 10px;
+}
+
+.scroll-right {
+  right: 10px;
+}
+
+.scroll-btn:hover {
+  background-color: #a08f5d;
+}
+
+
 
   </style>
 
@@ -262,6 +360,39 @@
     <p class="video-title">The future of Impact Investing: Trends to watch</p>
   </div>
 </div>
+
+<div class="scrollable-card-container">
+  <h1>Discover List of Investment Opportunities</h1>
+  <div class="scroll-wrapper">
+    <button class="scroll-btn scroll-left">&lt;</button>
+    <div class="scroll-cards">
+      <!-- Link cards from the other page -->
+      <a href="https://impactinvestingcommunity.com/t/energea-renewable-energy/157" class="card">
+        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/11112796108db01e791fb6d17caf83623e99ffa9_2_867x750.jpeg" alt="Energea">
+        <h2>Energea - Renewable Energy</h2>
+        <p>Promoting sustainability and combating climate change</p>
+      </a>
+      <a href="https://impactinvestingcommunity.com/t/epic-cleantec/140" class="card">
+        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/4220f2dd11b9c0a54a1eca836f9bae00c9962129_2_867x750.jpeg" alt="Epic Cleantec">
+        <h2>Epic Cleantec</h2>
+        <p>Impact Investment: Water Reuse Technology / Onsite Water Reuse</p>
+      </a>
+      <a href="https://impactinvestingcommunity.com/t/7wireventures-healthcare-vc/168" class="card">
+        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/112ec201589db9fc1e9a723b50de2ac9cd74e937_2_867x750.jpeg" alt="7Wire Ventures">
+        <h2>7Wire Ventures - Healthcare VC</h2>
+        <p>Investing in businesses that make a difference in health and well-being</p>
+      </a>
+      <a href="https://impactinvestingcommunity.com/t/blocpower-clean-energy/158" class="card">
+        <img src="https://impactinvestingcommunity.com/uploads/default/optimized/1X/7d3201b6da0969907a20eca69f904583ae2bdf80_2_1035x648.jpeg" alt="BlocPower">
+        <h2>BlocPower - Clean Energy</h2>
+        <p>Affordable and clean energy solutions for urban areas</p>
+      </a>
+      <!-- Add more cards as needed -->
+    </div>
+    <button class="scroll-btn scroll-right">&gt;</button>
+  </div>
+</div>
+
 
 
 
